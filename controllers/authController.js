@@ -1,1 +1,1 @@
-let number = 10
+const number = 10;
