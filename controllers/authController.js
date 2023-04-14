@@ -9,7 +9,7 @@ module.exports = {
       email
     )} OR username=${db.escape(username)}`;
     const isUserExist = await query(getUserQuery);
-    console.log(isUserExist);
+
     if (isUserExist.length > 0 && isUserExist[0].email === email) {
       return res.status(200).send({ message: "Email has been used" });
     } else if (isUserExist.length > 0 && isUserExist[0].username === username) {

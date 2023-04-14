@@ -3,9 +3,9 @@ const util = require("util");
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "yuanda123",
-  database: "db_cashier_app",
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
   port: 3306,
 });
 
