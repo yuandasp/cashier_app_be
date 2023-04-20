@@ -11,14 +11,14 @@ module.exports = {
     const isUserExist = await query(getUserQuery);
 
     if (isUserExist.length > 0 && isUserExist[0].email === email) {
-      return res.status(200).send({ message: "Email has been used" });
+      return res.status(400).send({ message: "Email has been used" });
     } else if (isUserExist.length > 0 && isUserExist[0].username === username) {
-      return res.status(200).send({ message: "Username has been used" });
+      return res.status(400).send({ message: "Username has been used" });
     }
 
     if (password.length < 8) {
       return res
-        .status(200)
+        .status(400)
         .send({ message: "Password too short, minimal 8 characters" });
     }
 
